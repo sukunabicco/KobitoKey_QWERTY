@@ -46,32 +46,44 @@
         };
 
         layer1 {
-            label = "NUMBER";
+            label = "FUNCTION";
             bindings = <
-&kp N0     &kp N1  &kp N2  &kp N3     &trans  &kp MINUS  &trans     &kp UP    &trans     &trans
-&kp EQUAL  &kp N4  &kp N5  &kp N6     &trans  &kp PLUS   &kp LEFT   &kp DOWN  &kp RIGHT  &trans
-&trans     &kp N7  &kp N8  &kp N9     &trans  &kp ASTRK  &kp SLASH  &kp LBKT  &kp RBKT   &trans
-&trans     &trans  &trans  &kp LSHFT  &trans  &trans     &trans     &trans    &trans     &trans
+&kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp HASH   &kp DOLLAR    &kp PERCENT     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LESS_THAN  &kp GREATER_THAN      &kp TILDE
+&kp AMPERSAND    &kp SQT            &kp MINUS  &kp EQUAL     &kp UNDERSCORE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp SEMICOLON  &kp COLON             &kp PIPE
+&kp CARET        &kp GRAVE          &kp PLUS   &kp ASTERISK  &kp QUESTION    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SLASH      &kp NON_US_BACKSLASH  &kp AT_SIGN
+&trans           &trans             &trans     &trans        &trans          &trans                &trans                 &trans         &trans                &trans
             >;
         };
 
         layer2 {
-            label = "FUNCTION";
+            bindings = <
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp N0
+&none         &kp F2        &none         &none         &kp F5  &none         &kp F7  &kp F8  &none   &kp F12
+&none         &none         &none         &none         &none   &none         &none   &none   &none   &none
+&trans        &trans        &trans        &trans        &trans  &trans        &trans  &trans  &trans  &trans
+            >;
+
+            label = "NUMBER";
+        };
+
+        layer3 {
+            bindings = <
+&kp ESCAPE     &kp LC(LS(TAB))  &kp LS(LC(PAGE_UP))  &none    &none   &none     &kp HOME        &kp UP_ARROW    &kp LS(LC(HOME))  &kp BACKSPACE
+&kp BACKSPACE  &kp LS(TAB)      &kp PAGE_DOWN        &kp TAB  &none   &mkp MB4  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW   &mkp MB5
+&kp INS        &none            &kp LALT             &none    &none   &none     &kp END         &kp LEFT_ALT    &kp LS(LC(END))   &trans
+&trans         &trans           &trans               &trans   &trans  &trans    &trans          &trans          &trans            &trans
+            >;
+
+            label = "MOVE";
+        };
+
+        layer4 {
+            label = "BLUETOOTH";
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F1   &kp F2   &kp F3  &kp F4  &kp F5
 &trans        &trans        &trans        &trans        &bt BT_CLR      &kp F6   &kp F7   &kp F8  &kp F9  &kp F10
 &trans        &trans        &trans        &trans        &bt BT_CLR_ALL  &kp F11  &kp F12  &trans  &trans  &trans
 &trans        &trans        &trans        &trans        &trans          &kp DEL  &trans   &trans  &trans  &trans
-            >;
-        };
-
-        layer3 {
-            label = "MOUSE";
-            bindings = <
-&trans     &trans  &trans    &trans    &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans     &trans  &trans    &trans    &trans  &trans  &trans    &trans    &trans    &trans
-&trans     &trans  &trans    &trans    &trans  &trans  &trans    &trans    &trans    &trans
-&kp LSHFT  &trans  &kp LCMD  &kp LALT  &to 0   &trans  &trans    &trans    &to 0     &kp RALT
             >;
         };
     };
