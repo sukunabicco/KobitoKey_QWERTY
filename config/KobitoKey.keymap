@@ -32,6 +32,11 @@
             key-positions = <10 11>;
             bindings = <&kp TAB>;
         };
+
+        combo_printscreen {
+            bindings = <&kp LG(LS(S))>;
+            key-positions = <9 8>;
+        };
     };
 
     macros {
