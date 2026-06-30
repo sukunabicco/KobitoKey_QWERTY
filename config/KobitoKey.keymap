@@ -111,5 +111,16 @@
 
             label = "BLUETOOTH";
         };
+
+        layer5 {
+            bindings = <
+&trans     &trans  &trans     &trans     &trans     &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans     &trans  &trans     &trans     &trans     &trans  &trans    &trans    &trans    &trans
+&trans     &trans  &trans     &trans     &trans     &trans  &trans    &trans    &trans    &trans
+&kp LSHFT  &trans  &kp LCMD   &kp LSHFT  &kp LALT   &trans  &trans    &trans    &to 0     &kp RALT
+            >;
+
+            label = "MOUSE";
+        };
     };
 };
