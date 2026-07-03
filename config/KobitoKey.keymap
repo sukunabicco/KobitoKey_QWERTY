@@ -92,10 +92,10 @@
 
         layer3 {
             bindings = <
-&kp ESCAPE     &kp LC(LS(TAB))  &kp LS(LC(PAGE_UP))  &none    &none   &none     &kp HOME        &kp UP_ARROW    &kp LS(LC(HOME))  &kp BACKSPACE
-&kp BACKSPACE  &kp LS(TAB)      &kp PAGE_DOWN        &kp TAB  &none   &mkp MB4  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW   &mkp MB5
-&kp INS        &none            &kp LALT             &none    &none   &none     &kp END         &kp LEFT_ALT    &kp LS(LC(END))   &trans
-&trans         &trans           &trans               &trans   &trans  &trans    &trans          &trans          &trans            &trans
+&kp ESCAPE     &kp LC(LS(TAB))  &kp LS(LC(PAGE_UP))  &none    &none   &none     &kp HOME        &kp UP_ARROW    &kp END          &kp BACKSPACE
+&kp BACKSPACE  &kp LS(TAB)      &kp PAGE_DOWN        &kp TAB  &none   &mkp MB4  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &mkp MB5
+&kp INS        &none            &kp LALT             &none    &none   &none     &kp LC(HOME)    &kp LEFT_ALT    &kp LC(END)      &trans
+&trans         &trans           &trans               &trans   &trans  &trans    &trans          &trans          &trans           &trans
             >;
 
             label = "MOVE";
@@ -114,10 +114,10 @@
 
         layer5 {
             bindings = <
-&trans     &trans  &trans     &trans     &trans     &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans     &trans  &trans     &trans     &trans     &trans  &trans    &trans    &trans    &trans
-&trans     &trans  &trans     &trans     &trans     &trans  &trans    &trans    &trans    &trans
-&kp LSHFT  &trans  &kp LCMD   &kp LSHFT  &kp LALT   &trans  &trans    &trans    &to 0     &kp RALT
+&trans     &trans  &trans    &trans     &trans    &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans     &trans  &trans    &trans     &trans    &trans  &trans    &trans    &trans    &trans
+&trans     &trans  &trans    &trans     &trans    &trans  &trans    &trans    &trans    &trans
+&kp LSHFT  &trans  &kp LCMD  &kp LSHFT  &kp LALT  &trans  &trans    &trans    &to 0     &kp RALT
             >;
 
             label = "MOUSE";
