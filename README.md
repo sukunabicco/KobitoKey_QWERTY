@@ -170,3 +170,38 @@
 | 発動アイドル | `zip_temp_layer` ノードの `require-prior-idle-ms` |
 | excluded 対象 | `&zip_temp_layer { excluded-positions = <...>; };` |
 | 対象レイヤー変更 | `<&zip_temp_layer 5 5000>` の第 1 引数 |
+
+---
+
+## LED 表示 (電池状態)
+
+Xiao BLE 内蔵の RGB LED を `caksoylar/zmk-rgbled-widget` で制御。**左 (central) 側のみ**有効で、表示するのは**左側自身の電池残量**のみ (右側の電池は右自身の LED では表示しない)。
+
+定義ファイル: `config/boards/shields/KobitoKey/KobitoKey_left.conf`
+
+### 発動タイミング
+
+- 起動時に一度ブリンク
+- 電池残量が閾値を跨いだ時にブリンク
+- 残量が CRITICAL 以下の間は定期的にブリンク
+
+### 閾値 & 色
+
+| 残量 | 色 | 表示 |
+|---|---|---|
+| 60 % 以上 | 🟢 緑 | 起動時 / 変化時にブリンク |
+| 30 – 60 % | 🟡 黄 | 起動時 / 変化時にブリンク |
+| 10 – 30 % | 🔴 赤 | 起動時 / 変化時にブリンク |
+| 10 % 未満 | 🔴 赤 | 定期ブリンク |
+| 電池未検出 | 🟣 マゼンタ | ブリンク |
+
+閾値は `CONFIG_RGBLED_WIDGET_BATTERY_LEVEL_HIGH=60` / `LOW=30` / `CRITICAL=10`。色はデフォルト値のまま (widget 既定)。
+
+### 設定を変えたいときの箇所
+
+| 目的 | 変更箇所 (`KobitoKey_left.conf`) |
+|---|---|
+| 電池閾値 | `CONFIG_RGBLED_WIDGET_BATTERY_LEVEL_HIGH` / `LOW` / `CRITICAL` |
+| 電池色 | `CONFIG_RGBLED_WIDGET_BATTERY_COLOR_HIGH` / `MEDIUM` / `LOW` / `CRITICAL` / `MISSING` |
+| 右側の電池も表示 | `CONFIG_RGBLED_WIDGET_BATTERY_SHOW_PERIPHERALS=y` |
+| ブリンク間隔 | `CONFIG_RGBLED_WIDGET_INTERVAL_MS` |
