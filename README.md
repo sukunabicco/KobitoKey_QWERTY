@@ -1,13 +1,237 @@
 # KobitoKey_QWERTY
 
-Layer 0 QWERTY
-<img width="1280" height="690" alt="Image" src="https://github.com/user-attachments/assets/ef0797b7-a63f-4632-912d-9b5d0115769f" />
+分割型キーボード KobitoKey (QWERTY 配列 / 記号は日本語 JIS) の keymap 定義。
 
-Layer 1 NUMBER & ARROW
-<img width="1280" height="690" alt="Image" src="https://github.com/user-attachments/assets/d6347b3c-a238-4278-bacd-e58195774d0e" />
+物理配置は左右各 4 段 × 5 列、合計 40 キー。キー位置番号は左手上段の Q が `0`、右手下段の RCtrl が `39` (左→右、上→下)。
 
-Layer 2 Bluetooth & FUNCTION
-<img width="1280" height="690" alt="Image" src="https://github.com/user-attachments/assets/f1f7cc93-fbd8-4a98-84ea-c8c36ad3952d" />
+## レイヤー一覧
 
-Layer 3 AUTO MOUSE
-<img width="1280" height="690" alt="Image" src="https://github.com/user-attachments/assets/2efe5275-e460-41bc-ae45-0c0665435268" />
+| # | ラベル | 呼び出し | 用途 |
+|---|---|---|---|
+| 0 | DEFAULT | 起動時 | 通常入力 |
+| 1 | FUNCTION | 左手親指 Space (位置 33) ホールド | 記号 |
+| 2 | NUMBER | 左手親指 Space (位置 32) ホールド | 数字・F キー・括弧マクロ |
+| 3 | MOVE | 右手親指 BS (位置 37) ホールド | カーソル / ページ移動 |
+| 4 | BLUETOOTH | 左手 LWin (位置 31) ホールド | BT ペアリング / bootloader |
+| 5 | MOUSE | 右トラックボール操作で自動発動 | マウスクリック / 修飾キー |
+
+## 凡例
+
+- `▽` = 下位レイヤーに透過 (`&trans`)
+- `─` = キー無効 (`&none`)
+- 2段表記のセル: 上段=タップ / 下段=ホールド (例: `Space` / `(L1)`)
+- `MB1..MB5` = マウスボタン (左 / 右 / 中 / 戻る / 進む)
+- `→ L0` = `&to 0` (Layer 0 に明示遷移)
+
+---
+
+## Layer 0 — DEFAULT
+
+**左手**
+
+| | | | | |
+|---|---|---|---|---|
+| Q | W | E | R | T |
+| A | S | D | F | G |
+| Z | X | C | V | B |
+| LCtrl | LWin<br>(L4) | Space<br>(L2) | Space<br>(L1) | MB1 |
+
+**右手**
+
+| | | | | |
+|---|---|---|---|---|
+| Y | U | I | O | P |
+| H | J | K | L | - |
+| N | M | , | . | @<br>RShift |
+| MB2 | Enter<br>RShift | BS<br>(L3) | RAlt | RCtrl |
+
+---
+
+## Layer 1 — FUNCTION (記号)
+
+**左手**
+
+| | | | | |
+|---|---|---|---|---|
+| ! | " | # | $ | % |
+| & | ' | - | = | _ |
+| ^ | ` | + | * | ? |
+| ▽ | ▽ | ▽ | ▽ | ▽ |
+
+**右手**
+
+| | | | | |
+|---|---|---|---|---|
+| ( | ) | < | > | ~ |
+| { | } | ; | : | \| |
+| [ | ] | / | \\ | @ |
+| ▽ | ▽ | ▽ | ▽ | ▽ |
+
+---
+
+## Layer 2 — NUMBER (数字・F キー・括弧マクロ)
+
+**左手**
+
+| | | | | |
+|---|---|---|---|---|
+| 1 | 2 | 3 | 4 | 5 |
+| ─ | F2 | ─ | ─ | F5 |
+| ─ | ─ | ─ | ─ | ─ |
+| ▽ | ▽ | ▽ | ▽ | ▽ |
+
+**右手**
+
+| | | | | |
+|---|---|---|---|---|
+| 6 | 7 | 8 | 9 | 0 |
+| ─ | F7 | F8 | ─ | F12 |
+| ─ | `[]←` | `()←` | ─ | ─ |
+| ▽ | ▽ | ▽ | ▽ | ▽ |
+
+`[]←` / `()←` はマクロ (下記 Macros セクション参照)。
+
+---
+
+## Layer 3 — MOVE (カーソル / ページ移動)
+
+**左手**
+
+| | | | | |
+|---|---|---|---|---|
+| Esc | Ctrl+Shift+Tab | Shift+Ctrl+PgUp | ─ | ─ |
+| BS | Shift+Tab | PgDn | Tab | ─ |
+| Ins | ─ | LAlt | ─ | ─ |
+| ▽ | ▽ | ▽ | ▽ | ▽ |
+
+**右手**
+
+| | | | | |
+|---|---|---|---|---|
+| ─ | Home | ↑ | End | BS |
+| MB4 | ← | ↓ | → | MB5 |
+| ─ | Ctrl+Home | LAlt | Ctrl+End | ▽ |
+| ▽ | ▽ | ▽ | ▽ | ▽ |
+
+---
+
+## Layer 4 — BLUETOOTH
+
+**左手**
+
+| | | | | |
+|---|---|---|---|---|
+| BT 0 | BT 1 | BT 2 | BT 3 | BT 4 |
+| ─ | ─ | ─ | ─ | bootloader |
+| ─ | ─ | ─ | ─ | ─ |
+| BT CLR | BT CLR ALL | ─ | ─ | ─ |
+
+**右手** (すべて `─`)
+
+| | | | | |
+|---|---|---|---|---|
+| ─ | ─ | ─ | ─ | ─ |
+| ─ | ─ | ─ | ─ | ─ |
+| ─ | ─ | ─ | ─ | ─ |
+| ─ | ─ | ─ | ─ | ─ |
+
+- `BT 0..4` = `&bt BT_SEL 0..4` (プロファイル選択)
+- `BT CLR` = 現プロファイルのペアリング消去
+- `BT CLR ALL` = 全ペアリング消去
+
+---
+
+## Layer 5 — MOUSE (Auto Mouse Layer)
+
+**左手**
+
+| | | | | |
+|---|---|---|---|---|
+| ▽ | ▽ | ▽ | ▽ | ▽ |
+| ▽ | ▽ | ▽ | ▽ | ▽ |
+| ▽ | ▽ | ▽ | ▽ | ▽ |
+| LShift | ▽ | LCmd | LShift | LAlt |
+
+**右手**
+
+| | | | | |
+|---|---|---|---|---|
+| ▽ | MB1 | MB3 | MB2 | ▽ |
+| ▽ | ▽ | ▽ | ▽ | ▽ |
+| ▽ | ▽ | ▽ | ▽ | ▽ |
+| ▽ | ▽ | ▽ | → L0 | RAlt |
+
+---
+
+## Combos
+
+同時押しで発動 (timeout 50ms)。
+
+| キー位置 | 物理キー (Layer 0) | 発動 | 用途 |
+|---|---|---|---|
+| 0 + 1 | Q + W | Esc | Escape |
+| 10 + 11 | A + S | Tab | Tab |
+| 12 + 13 | D + F | LANG2 | 英数 (JIS) |
+| 16 + 17 | J + K | LANG1 | かな (JIS) |
+| 8 + 9 | O + P | Win+Shift+S | 範囲スクショ |
+
+---
+
+## Macros
+
+| 名前 | 呼び出し位置 | 動作 |
+|---|---|---|
+| `m_kakko` | Layer 2 右手 R2 C2 | `[` → `]` → `←` |
+| `m_paren` | Layer 2 右手 R2 C3 | `(` → `)` → `←` |
+
+括弧を入力してカーソルを内側に戻す。
+
+---
+
+## Auto Mouse Layer
+
+右トラックボールを操作すると自動で Layer 5 (MOUSE) に切り替わる。ZMK の `zip_temp_layer` (input-processor-temp-layer) で実装。
+
+定義ファイル: `config/boards/shields/KobitoKey/KobitoKey_left.overlay`
+
+### 設定値
+
+| 項目 | 値 | 意味 |
+|---|---|---|
+| 対象レイヤー | 5 (MOUSE) | 切り替え先 |
+| 滞留時間 | 5000ms | 最後の入力から Layer 5 が維持される時間 |
+| 発動アイドル | 350ms | 直前のキー押下からこの時間経過するまで Layer 5 に入らない (誤爆防止) |
+
+### 切り替わる条件
+
+- 右トラックボールを動かす
+- ただし直前のキー押下から 350ms 以内は発動しない
+
+### 抜ける条件
+
+1. 最後のトラボ入力 / マウスボタン押下から 5000ms 経過
+2. **excluded-positions 以外**のキーを押した瞬間に解除
+3. `→ L0` (位置 38) を押して明示解除
+
+### excluded-positions (押しても Layer 5 を抜けないキー)
+
+マウスクリック / 修飾キーが連続入力されても Layer 5 が切れないようにするための除外リスト。
+
+| 位置 | Layer 5 上のキー |
+|---|---|
+| 6 | MB1 (右手 R0 C1) |
+| 7 | MB3 (右手 R0 C2) |
+| 8 | MB2 (右手 R0 C3) |
+| 30 | LShift (左手 R3 C0) |
+| 32 | LCmd (左手 R3 C2) |
+| 33 | LShift (左手 R3 C3) |
+| 39 | RAlt (右手 R3 C4) |
+
+### 設定を変えたいときの箇所
+
+| 目的 | 変更箇所 |
+|---|---|
+| 滞留時間 | overlay の `<&zip_temp_layer 5 5000>` の第 2 引数 |
+| 発動アイドル | `zip_temp_layer` ノードの `require-prior-idle-ms` |
+| excluded 対象 | `&zip_temp_layer { excluded-positions = <...>; };` |
+| 対象レイヤー変更 | `<&zip_temp_layer 5 5000>` の第 1 引数 |
