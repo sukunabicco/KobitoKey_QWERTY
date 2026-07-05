@@ -62,10 +62,10 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W           &kp E        &kp R        &kp T     &kp Y     &kp U                  &kp I            &kp O          &kp P
-&kp A      &kp S           &kp D        &kp F        &kp G     &kp H     &kp J                  &kp K            &kp L          &kp JP_MINS
-&kp Z      &kp X           &kp C        &kp V        &kp B     &kp N     &kp M                  &kp COMMA        &kp DOT        &mt RIGHT_SHIFT JP_AT
-&kp LCTRL  &lt 4 LEFT_WIN  &lt 2 SPACE  &lt 1 SPACE  &mkp MB1  &mkp MB2  &mt RIGHT_SHIFT ENTER  &lt 3 BACKSPACE  &kp RIGHT_ALT  &kp RCTRL
+&kp Q           &kp W        &kp E             &kp R             &kp T        &kp Y      &kp U          &kp I           &kp O          &kp P
+&kp A           &kp S        &kp D             &kp F             &kp G        &kp H      &kp J          &kp K           &kp L          &kp JP_MINS
+&kp Z           &kp X        &kp C             &kp V             &kp B        &kp N      &kp M          &kp COMMA       &kp DOT        &mt RIGHT_SHIFT JP_AT
+&kp LEFT_SHIFT  &lt 4 LCTRL  &lt 3 LANGUAGE_2  &lt 2 LANGUAGE_1  &lt 1 SPACE  &kp ENTER  &kp BACKSPACE  &kp LEFT_SHIFT  &kp RIGHT_ALT  &kp RCTRL
             >;
         };
 
@@ -92,10 +92,10 @@
 
         layer3 {
             bindings = <
-&kp ESCAPE     &kp LC(LS(TAB))  &kp LS(LC(PAGE_UP))  &none    &none   &none     &kp HOME        &kp UP_ARROW    &kp LS(LC(HOME))  &kp BACKSPACE
-&kp BACKSPACE  &kp LS(TAB)      &kp PAGE_DOWN        &kp TAB  &none   &mkp MB4  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW   &mkp MB5
-&kp INS        &none            &kp LALT             &none    &none   &none     &kp END         &kp LEFT_ALT    &kp LS(LC(END))   &trans
-&trans         &trans           &trans               &trans   &trans  &trans    &trans          &trans          &trans            &trans
+&kp ESCAPE     &kp LC(LS(TAB))  &kp LS(LC(PAGE_UP))  &none    &none   &none     &kp HOME        &kp UP_ARROW    &kp END          &kp BACKSPACE
+&kp BACKSPACE  &kp LS(TAB)      &kp PAGE_DOWN        &kp TAB  &none   &mkp MB4  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &mkp MB5
+&kp INS        &none            &kp LALT             &none    &none   &none     &kp LC(HOME)    &kp LEFT_ALT    &kp LC(END)      &trans
+&trans         &trans           &trans               &trans   &trans  &trans    &trans          &trans          &trans           &trans
             >;
 
             label = "MOVE";
@@ -110,6 +110,17 @@
             >;
 
             label = "BLUETOOTH";
+        };
+
+        layer5 {
+            bindings = <
+&trans     &trans  &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans
+&trans     &trans  &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans
+&trans     &trans  &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans
+&kp LSHFT  &trans  &kp LCMD  &mkp MB1  &mkp MB2  &trans  &trans  &trans  &to 0   &kp RCTRL
+            >;
+
+            label = "MOUSE";
         };
     };
 };
