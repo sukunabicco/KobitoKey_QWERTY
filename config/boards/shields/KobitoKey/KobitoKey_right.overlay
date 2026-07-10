@@ -44,5 +44,5 @@
 &tb_right_split {
     device = <&tb_right>;
 
-    input-processors = <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>;
+    input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
 };
