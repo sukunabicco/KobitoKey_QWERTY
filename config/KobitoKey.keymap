@@ -119,10 +119,10 @@
 
         layer5 {
             bindings = <
-&trans     &trans  &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans
-&trans     &trans  &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans
-&trans     &trans  &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans
-&kp LSHFT  &trans  &kp LCMD  &mkp MB1  &mkp MB2  &trans  &trans  &trans  &to 0   &kp RCTRL
+&trans        &trans  &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &trans  &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &trans  &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_WIN  &trans  &mkp MB1  &mkp MB2  &trans  &trans  &trans  &trans  &to 0   &kp RCTRL
             >;
 
             label = "MOUSE";
