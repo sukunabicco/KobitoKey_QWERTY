@@ -114,10 +114,10 @@
 
         layer5 {
             bindings = <
-&trans         &trans  &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans         &trans  &mkp MB1  &mkp MB2  &trans  &trans  &trans  &trans  &trans  &trans
-&trans         &trans  &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&kp LG(LS(S))  &trans  &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans         &trans  &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans
+&trans         &trans  &mkp MB1  &mkp MB2  &trans    &trans  &trans  &trans  &trans  &trans
+&trans         &trans  &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans
+&kp LG(LS(S))  &trans  &trans    &mkp MB1  &mkp MB2  &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "MOUSE";
