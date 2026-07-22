@@ -33,11 +33,6 @@
             bindings = <&kp TAB>;
         };
 
-        combo_printscreen {
-            bindings = <&kp LG(LS(S))>;
-            key-positions = <9 8>;
-        };
-
         combo_alt+backspace {
             bindings = <&kp RA(BACKSPACE)>;
             key-positions = <18 19>;
