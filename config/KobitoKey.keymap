@@ -37,6 +37,11 @@
             bindings = <&kp RA(BACKSPACE)>;
             key-positions = <18 19>;
         };
+
+        combo_screenshot {
+            bindings = <&kp LG(LS(S))>;
+            key-positions = <8 9>;
+        };
     };
 
     macros {
@@ -114,10 +119,10 @@
 
         layer5 {
             bindings = <
-&trans  &trans         &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans         &mkp MB1  &mkp MB2  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans         &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LG(LS(S))  &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "MOUSE";
